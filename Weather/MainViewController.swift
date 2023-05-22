@@ -7,11 +7,17 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class MainViewController: UIViewController {
 
     @IBOutlet var refreshButton: UIButton!
-    @IBOutlet var temperatureLabel: UILabel!
     @IBOutlet var dateTimeLabel: UILabel!
+    
+    @IBOutlet var temperatureLabel: UILabel!
+    
+    @IBOutlet var altitudeLabel: UILabel!
+    @IBOutlet var humidityLabel: UILabel!
+    @IBOutlet var pressureLabel: UILabel!
+    
     @IBOutlet var propertiesBackgroundView: UIView!
     
     override func viewDidLoad() {
@@ -62,34 +68,72 @@ class ViewController: UIViewController {
         dateTimeLabel.text = "\(currentDate) | \(currentTime)"
         
         guard let url = URL(
-            string: "http://espservspbeu.mooo.com:10285"
+            string: "http://meteostationspbeu.mooo.com:10285"
         ) else { return }
         
         let session = URLSession.shared
         session.dataTask(with: url) { (data, response, error) in
             
+            if let _ = error {
+                DispatchQueue.main.async {
+                    self.showAlert(title: "Ошибка", message: "Не получилось загрузить данные")
+                }
+            }
+            
             guard let data = data else { return }
             
             do {
                 let result = try JSONDecoder().decode(Weather.self, from: data)
+                
                 DispatchQueue.main.async {
-                    self.temperatureLabel.text = String(
-                        format: "%.0f",
-                        result.Temperature
-                    )
+                    self.setupValuesFor(weather: result)
                 }
             } catch {
                 print(error)
+                DispatchQueue.main.async {
+                    self.showAlert(title: "Ошибка", message: "Не получилось загрузить данные")
+                }
             }
             
         }.resume()
     }
+    
+    private func showAlert(title: String, message: String) {
+        let alertForShow = UIAlertController(
+            title: title,
+            message: message,
+            preferredStyle: .alert
+        )
+        let okAlertButton = UIAlertAction(title: "Закрыть", style: .default)
+        alertForShow.addAction(okAlertButton)
+        
+        self.present(alertForShow, animated: true)
+    }
+    
+    private func setupValuesFor(weather: Weather) {
+        altitudeLabel.text = String(
+            format: "%.f",
+            weather.altitude
+        )
+        temperatureLabel.text = String(
+            format: "%.0f",
+            weather.temperature
+        )
+        humidityLabel.text = String(
+            format: "%.f",
+            weather.humidity
+        ) + "%"
+        pressureLabel.text = String(
+            format: "%.f",
+            weather.pressure
+        )
+    }
 }
 
 struct Weather: Decodable {
-    var Altitude: Double
-    var Humidity: Double
-    var Light: Double
-    var Pressure: Double
-    var Temperature: Double
+    var altitude: Double
+    var humidity: Double
+    var light: Double
+    var pressure: Double
+    var temperature: Double
 }

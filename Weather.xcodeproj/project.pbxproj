@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		94A28C472A07E872000F307A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A28C462A07E872000F307A /* AppDelegate.swift */; };
 		94A28C492A07E872000F307A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A28C482A07E872000F307A /* SceneDelegate.swift */; };
-		94A28C4B2A07E872000F307A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A28C4A2A07E872000F307A /* ViewController.swift */; };
+		94A28C4B2A07E872000F307A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A28C4A2A07E872000F307A /* MainViewController.swift */; };
 		94A28C4E2A07E872000F307A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94A28C4C2A07E872000F307A /* Main.storyboard */; };
 		94A28C502A07E873000F307A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94A28C4F2A07E873000F307A /* Assets.xcassets */; };
 		94A28C532A07E873000F307A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94A28C512A07E873000F307A /* LaunchScreen.storyboard */; };
+		94BA78802A18E4E900DA3D59 /* AnimationLogoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BA787F2A18E4E900DA3D59 /* AnimationLogoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		94A28C432A07E872000F307A /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94A28C462A07E872000F307A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94A28C482A07E872000F307A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		94A28C4A2A07E872000F307A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		94A28C4A2A07E872000F307A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		94A28C4D2A07E872000F307A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		94A28C4F2A07E873000F307A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		94A28C522A07E873000F307A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		94A28C542A07E873000F307A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94BA787F2A18E4E900DA3D59 /* AnimationLogoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationLogoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +60,11 @@
 			children = (
 				94A28C462A07E872000F307A /* AppDelegate.swift */,
 				94A28C482A07E872000F307A /* SceneDelegate.swift */,
-				94A28C4A2A07E872000F307A /* ViewController.swift */,
+				94A28C4A2A07E872000F307A /* MainViewController.swift */,
+				94BA787F2A18E4E900DA3D59 /* AnimationLogoViewController.swift */,
 				94A28C4C2A07E872000F307A /* Main.storyboard */,
-				94A28C4F2A07E873000F307A /* Assets.xcassets */,
 				94A28C512A07E873000F307A /* LaunchScreen.storyboard */,
+				94A28C4F2A07E873000F307A /* Assets.xcassets */,
 				94A28C542A07E873000F307A /* Info.plist */,
 			);
 			path = Weather;
@@ -138,7 +141,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94A28C4B2A07E872000F307A /* ViewController.swift in Sources */,
+				94BA78802A18E4E900DA3D59 /* AnimationLogoViewController.swift in Sources */,
+				94A28C4B2A07E872000F307A /* MainViewController.swift in Sources */,
 				94A28C472A07E872000F307A /* AppDelegate.swift in Sources */,
 				94A28C492A07E872000F307A /* SceneDelegate.swift in Sources */,
 			);
