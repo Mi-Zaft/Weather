@@ -10,15 +10,22 @@ import UIKit
 final class MainViewController: UIViewController {
 
     @IBOutlet var refreshButton: UIButton!
+    @IBOutlet var settingsButton: UIButton!
     @IBOutlet var dateTimeLabel: UILabel!
     
     @IBOutlet var temperatureLabel: UILabel!
+    @IBOutlet var weatherLabel: UILabel!
+    @IBOutlet var urlTextField: UITextField!
     
     @IBOutlet var altitudeLabel: UILabel!
     @IBOutlet var humidityLabel: UILabel!
     @IBOutlet var pressureLabel: UILabel!
     
+    @IBOutlet var weatherImage: UIImage!
+    
     @IBOutlet var propertiesBackgroundView: UIView!
+    
+    var url = "http://meteostationspbeu.mooo.com:10285"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +39,12 @@ final class MainViewController: UIViewController {
         print("Refresh button did tapped!")
     }
     
+    @IBAction func unwind(segue: UIStoryboardSegue) {
+        guard let settingsVC = segue.source as? SettingsViewController else { return }
+        url = settingsVC.urlTextField.text ?? "qwe"
+        getDataWeather()
+    }
+    
     private func setupUI() {
         refreshButton.backgroundColor = UIColor(
             red: 1,
@@ -42,6 +55,15 @@ final class MainViewController: UIViewController {
         refreshButton.layer.cornerRadius = 10
         refreshButton.tintColor = .white
         
+        settingsButton.backgroundColor = UIColor(
+            red: 1,
+            green: 1,
+            blue: 1,
+            alpha: 0.3
+        )
+        settingsButton.layer.cornerRadius = 10
+        settingsButton.tintColor = .white
+        
         let colorTop =  UIColor(named: "propertiesBackgroundTop")!.cgColor
         let colorBottom = UIColor(named: "propertiesBackgroundBottom")!.cgColor
         
@@ -50,7 +72,7 @@ final class MainViewController: UIViewController {
         gradientLayer.locations = [0.0, 1.0]
         gradientLayer.frame = propertiesBackgroundView.bounds
         
-        propertiesBackgroundView.layer.insertSublayer(gradientLayer, at:0)
+//        propertiesBackgroundView.layer.insertSublayer(gradientLayer, at:0)
         propertiesBackgroundView.layer.sublayers?[0].cornerRadius = 10
         propertiesBackgroundView.layer.cornerRadius = 10
     }
@@ -68,7 +90,7 @@ final class MainViewController: UIViewController {
         dateTimeLabel.text = "\(currentDate) | \(currentTime)"
         
         guard let url = URL(
-            string: "http://meteostationspbeu.mooo.com:10285"
+            string: url
         ) else { return }
         
         let session = URLSession.shared
@@ -87,6 +109,7 @@ final class MainViewController: UIViewController {
                 
                 DispatchQueue.main.async {
                     self.setupValuesFor(weather: result)
+                    self.changeImage(weather: result)
                 }
             } catch {
                 print(error)
@@ -111,14 +134,14 @@ final class MainViewController: UIViewController {
     }
     
     private func setupValuesFor(weather: Weather) {
-        altitudeLabel.text = String(
-            format: "%.f",
-            weather.altitude
-        )
         temperatureLabel.text = String(
             format: "%.0f",
             weather.temperature
         )
+        altitudeLabel.text = String(
+            format: "%.f",
+            weather.altitude
+        ) + "%"
         humidityLabel.text = String(
             format: "%.f",
             weather.humidity
@@ -127,6 +150,25 @@ final class MainViewController: UIViewController {
             format: "%.f",
             weather.pressure
         )
+    }
+    
+    private func changeImage(weather: Weather) {
+        let currentDate = Date()
+        let calendar = Calendar.current
+
+        let hour = calendar.component(.hour, from: currentDate)
+        
+        //weatherImage
+        if weather.light <= 15 || hour <= 4 || hour >= 22 {
+            print("night")
+            weatherLabel.text = "Ясно"
+        } else if hour > 4, hour < 20, weather.light <= 70 {
+            weatherLabel.text = "Дождь"
+        } else if hour > 4, weather.light <= 250 {
+            weatherLabel.text = "Облачно"
+        } else {
+            weatherLabel.text = "Ясно"
+        }
     }
 }
 

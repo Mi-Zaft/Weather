@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "mostly_sunny.png",
+      "filename" : "weather_icon_sunny_night.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },

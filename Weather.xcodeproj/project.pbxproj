@@ -14,6 +14,7 @@
 		94A28C502A07E873000F307A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94A28C4F2A07E873000F307A /* Assets.xcassets */; };
 		94A28C532A07E873000F307A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94A28C512A07E873000F307A /* LaunchScreen.storyboard */; };
 		94BA78802A18E4E900DA3D59 /* AnimationLogoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BA787F2A18E4E900DA3D59 /* AnimationLogoViewController.swift */; };
+		94F183142A1ED4A90003ED6E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F183132A1ED4A90003ED6E /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		94A28C522A07E873000F307A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		94A28C542A07E873000F307A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94BA787F2A18E4E900DA3D59 /* AnimationLogoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationLogoViewController.swift; sourceTree = "<group>"; };
+		94F183132A1ED4A90003ED6E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				94A28C462A07E872000F307A /* AppDelegate.swift */,
 				94A28C482A07E872000F307A /* SceneDelegate.swift */,
 				94A28C4A2A07E872000F307A /* MainViewController.swift */,
+				94F183132A1ED4A90003ED6E /* SettingsViewController.swift */,
 				94BA787F2A18E4E900DA3D59 /* AnimationLogoViewController.swift */,
 				94A28C4C2A07E872000F307A /* Main.storyboard */,
 				94A28C512A07E873000F307A /* LaunchScreen.storyboard */,
@@ -144,6 +147,7 @@
 				94BA78802A18E4E900DA3D59 /* AnimationLogoViewController.swift in Sources */,
 				94A28C4B2A07E872000F307A /* MainViewController.swift in Sources */,
 				94A28C472A07E872000F307A /* AppDelegate.swift in Sources */,
+				94F183142A1ED4A90003ED6E /* SettingsViewController.swift in Sources */,
 				94A28C492A07E872000F307A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

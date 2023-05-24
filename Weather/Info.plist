@@ -9,7 +9,12 @@
 		<key>NSExceptionDomains</key>
 		<dict>
 			<key>http://espservspbeu.mooo.com:10285</key>
-			<string></string>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+			</dict>
 		</dict>
 	</dict>
 	<key>UIApplicationSceneManifest</key>
