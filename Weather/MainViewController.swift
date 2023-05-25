@@ -21,7 +21,7 @@ final class MainViewController: UIViewController {
     @IBOutlet var humidityLabel: UILabel!
     @IBOutlet var pressureLabel: UILabel!
     
-    @IBOutlet var weatherImage: UIImage!
+    @IBOutlet var weatherImage: UIImageView!
     
     @IBOutlet var propertiesBackgroundView: UIView!
     
@@ -160,14 +160,17 @@ final class MainViewController: UIViewController {
         
         //weatherImage
         if weather.light <= 15 || hour <= 4 || hour >= 22 {
-            print("night")
             weatherLabel.text = "Ясно"
+            weatherImage.image = UIImage(named: "weather_night")
         } else if hour > 4, hour < 20, weather.light <= 70 {
             weatherLabel.text = "Дождь"
+            weatherImage.image = UIImage(named: "weather_rain_day")
         } else if hour > 4, weather.light <= 250 {
             weatherLabel.text = "Облачно"
+            weatherImage.image = UIImage(named: "weather_cloudy")
         } else {
             weatherLabel.text = "Ясно"
+            weatherImage.image = UIImage(named: "weather_sunny")
         }
     }
 }

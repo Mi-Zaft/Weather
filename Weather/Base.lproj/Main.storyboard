@@ -243,20 +243,20 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weather_night" translatesAutoresizingMaskIntoConstraints="NO" id="SPd-fy-qxI">
-                                <rect key="frame" x="178.33333333333334" y="92.666666666666671" width="73.333333333333343" height="39.000000000000014"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weather_cloudy" translatesAutoresizingMaskIntoConstraints="NO" id="SPd-fy-qxI">
+                                <rect key="frame" x="77.333333333333343" y="92.666666666666686" width="275.33333333333326" height="147"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="SPd-fy-qxI" secondAttribute="height" multiplier="15:8" id="r6Q-av-awv"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hsz-JW-OF9">
-                                <rect key="frame" x="179" y="151.66666666666666" width="72" height="87.666666666666657"/>
+                                <rect key="frame" x="179" y="259.66666666666669" width="72" height="87.666666666666686"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="75"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friday, 26 August 2022 | 10:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fS7-ut-sf7">
-                                <rect key="frame" x="81.333333333333343" y="254.33333333333337" width="267.66666666666663" height="24"/>
+                                <rect key="frame" x="81.333333333333343" y="362.33333333333331" width="267.66666666666663" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -383,6 +383,7 @@
                         <outlet property="refreshButton" destination="8aG-hZ-plY" id="bPA-xe-3g9"/>
                         <outlet property="settingsButton" destination="hd8-yC-0lQ" id="V1F-mv-W5o"/>
                         <outlet property="temperatureLabel" destination="hsz-JW-OF9" id="xG7-V2-2J7"/>
+                        <outlet property="weatherImage" destination="SPd-fy-qxI" id="AFi-cF-qi0"/>
                         <outlet property="weatherLabel" destination="GSc-QG-KEc" id="PTO-xd-26L"/>
                     </connections>
                 </viewController>
@@ -516,7 +517,6 @@
         <image name="pressure" width="33" height="33"/>
         <image name="snowflake" catalog="system" width="119" height="128"/>
         <image name="weather_cloudy" width="180" height="147"/>
-        <image name="weather_night" width="55" height="39"/>
         <namedColor name="darkBlue">
             <color red="0.15686275059999999" green="0.1411764771" blue="0.46666666870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
